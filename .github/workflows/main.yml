@@ -1,14 +1,20 @@
 name: sync-action
 
 on: push
+
 jobs:
-  git-sync:
+  sync:
     runs-on: ubuntu-latest
+    name: Git Repo Sync
     steps:
-      - name: git-sync
-        uses: wei/git-sync@v3
-        with:
-          source_repo: "https://kirantejaa74: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@github.com/kirantejaa74/aem-test.git"
-          source_branch: "main"
-          destination_repo: "https://kirantejaa74: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@github.com/kirantejaa74/aem-test-1.git"
-          destination_branch: "main"
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: wangchucheng/git-repo-sync@v0.1.0
+      with:
+        # Such as https://github.com/wangchucheng/git-repo-sync.git
+        target-url: https://github.com/kirantejaa74/aem-test-1.git
+        # Such as wangchucheng
+        target-username: kirantejaa74
+        # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
+        target-token: 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
