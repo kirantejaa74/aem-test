@@ -17,4 +17,4 @@ jobs:
         # Such as wangchucheng
         target-username: kiranteja-ta
         # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
-        target-token: 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
+        target-token: ${{ secrets.ACCESS_TOKEN }}
