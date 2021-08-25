@@ -10,5 +10,5 @@ jobs:
         with:
           source_repo: "https://kirantejaa74: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@github.com/kirantejaa74/aem-test.git"
           source_branch: "main"
-          destination_repo: "https://kiranteja-ta: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@github.com/kiranteja-ta/aem-test-remote.git"
+          destination_repo: "https://kirantejaa74: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@github.com/kirantejaa74/aem-test-1.git"
           destination_branch: "main"
