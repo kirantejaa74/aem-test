@@ -1,22 +1,14 @@
 name: sync-action
 
-on: 
-  - push
-  - delete
-
+on: push
 jobs:
-  sync:
+  git-sync:
     runs-on: ubuntu-latest
-    name: Git Repo Sync
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - uses: wangchucheng/git-repo-sync@v0.1.0
-      with:
-        # Such as https://github.com/wangchucheng/git-repo-sync.git
-        target-url: https://github.com/kiranteja-ta/aem-test-remote.git
-        # Such as wangchucheng
-        target-username: kiranteja-ta
-        # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
-        target-token: Kiranteja@123
+      - name: git-sync
+        uses: wei/git-sync@v3
+        with:
+          source_repo: "kirantejaa74/aem-test"
+          source_branch: "main"
+          destination_repo: "kiranteja-ta/aem-test-remote"
+          destination_branch: "main"
