@@ -1,4 +1,4 @@
-name: <action-name>
+name: sync-action
 
 on: 
   - push
