@@ -1,6 +1,8 @@
 name: sync-action
 
-on: push
+on: 
+  - push
+  - delete
 
 jobs:
   sync:
