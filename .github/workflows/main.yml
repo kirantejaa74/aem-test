@@ -1,6 +1,9 @@
 name: sync-action
 
 on: push
+env:
+  # Branch name
+  BRANCH_NAME: ${GITHUB_REF##*/}
 jobs:
   git-sync:
     runs-on: ubuntu-latest
@@ -9,6 +12,6 @@ jobs:
         uses: wei/git-sync@v3
         with:
           source_repo: "https://kirantejaa74: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@github.com/kirantejaa74/aem-test.git"
-          source_branch: "main"
-          destination_repo: "https://rajeev-duggal-tadigital-com:auuso2hscjeoa4d3lp2tvepsvahi6m7cfdt2gfsl4v4hyjnyed6a@git.cloudmanager.adobe.com/h2oai/H2O-Website-Github/"
-          destination_branch: "main"
+          source_branch: "${GITHUB_REF##*/}"
+          destination_repo: "https://kirantejaa74:otMwuPvJyTJkbN3ys1Hz@gitlab.com/kirantejaa74/aem-test-remote.git"
+          destination_branch: "${GITHUB_REF##*/}"
