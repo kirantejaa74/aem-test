@@ -1,9 +1,25 @@
 name: sync-action
 
-on: push
-env:
-  # Branch name
-  BRANCH_NAME: ${GITHUB_REF##*/}
+on:
+  push:
+    branches:
+    - master
+    - develop
+    - qa
+    - release
+    - code_quality
+    - main
+    - test
+  delete:
+    branches:
+    - master
+    - develop
+    - qa
+    - release
+    - code_quality
+    - main
+    - test
+
 jobs:
   git-sync:
     runs-on: ubuntu-latest
