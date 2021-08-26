@@ -15,8 +15,6 @@ on:
     - qa
     - release
     - code_quality
-    branches-ignore:
-    - 'test1'
 
 jobs:
   sync:
