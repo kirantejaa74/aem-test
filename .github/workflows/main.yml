@@ -1,34 +1,14 @@
 name: sync-action
 
-on:
-  push:
-    branches:
-    - master
-    - develop
-    - qa
-    - release
-    - code_quality
-  delete:
-    branches:
-    - master
-    - develop
-    - qa
-    - release
-    - code_quality
-
+on: push
 jobs:
-  sync:
+  git-sync:
     runs-on: ubuntu-latest
-    name: Git Repo Sync
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - uses: wangchucheng/git-repo-sync@v0.1.0
-      with:
-        # Such as https://github.com/wangchucheng/git-repo-sync.git
-        target-url: https://gitlab.com/kirantejaa74/aem-test-remote.git
-        # Such as wangchucheng
-        target-username: kirantejaa74
-        # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
-        target-token: s1zhMiv7__GsMn_gGUyc
+      - name: git-sync
+        uses: wei/git-sync@v3
+        with:
+          source_repo: "https://kirantejaa74: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@github.com/kirantejaa74/aem-test.git"
+          source_branch: "main"
+          destination_repo: "https://rajeev-duggal-tadigital-com:auuso2hscjeoa4d3lp2tvepsvahi6m7cfdt2gfsl4v4hyjnyed6a@git.cloudmanager.adobe.com/h2oai/H2O-Website-Github/"
+          destination_branch: "main"
