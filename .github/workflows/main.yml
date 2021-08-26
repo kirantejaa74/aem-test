@@ -8,7 +8,14 @@ on:
     - qa
     - release
     - code_quality
-
+  delete:
+    branches:
+    - master
+    - develop
+    - qa
+    - release
+    - code_quality
+    - '!**'
 
 jobs:
   sync:
