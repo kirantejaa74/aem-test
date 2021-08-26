@@ -1,9 +1,21 @@
 name: sync-action
 
-on: 
-  - push
-  - delete
-
+on:
+  push:
+    branches:
+    - master
+    - develop
+    - qa
+    - release
+    - main
+  delete:
+    branches:
+    - master
+    - develop
+    - qa
+    - release
+    - main
+    
 jobs:
   sync:
     runs-on: ubuntu-latest
