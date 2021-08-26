@@ -8,6 +8,7 @@ on:
     - qa
     - release
     - main
+    - setup
   delete:
     branches:
     - master
@@ -15,7 +16,8 @@ on:
     - qa
     - release
     - main
-    
+    - setup
+
 jobs:
   sync:
     runs-on: ubuntu-latest
