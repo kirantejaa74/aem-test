@@ -7,16 +7,8 @@ on:
     - develop
     - qa
     - release
-    - main
-    - setup
-  delete:
-    branches:
-    - master
-    - develop
-    - qa
-    - release
-    - main
-    - setup
+    - code_quality
+
 
 jobs:
   sync:
